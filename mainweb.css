@@ -2,6 +2,9 @@ body {
     background-color: #3b5f3b ;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 ::-webkit-scrollbar {
     display: none; /* Hides the scrollbar */
@@ -77,9 +80,9 @@ h2{
     font-weight:bold;
 }
 .polaroid {
-    padding: 20px 20px;
-    height:292px;
-    width:30%;
+    padding:auto;
+    height:500;
+    width:60%;
     background-color: white; /* Polaroid background */
     border: 10px solid #ffffff; /* Thin outer border */
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
@@ -91,6 +94,15 @@ h2{
     align-items:center;
     display:flex;
     margin-top:50px;
+  }
+
+#polaroid-img {
+    width: 100%; /* Make image fit the container */
+    height: 100%; /* Keep image proportions */
+    padding:1px;
+    margin:0 40px;
+    box-sizing:border-box;
+    object-fit:cover;
   }
 
 #tree.container{
@@ -117,13 +129,6 @@ h2{
     margin: 0px auto;
 }
   
-#polaroid-img {
-    width: 50%; /* Make image fit the container */
-    height: auto; /* Keep image proportions */
-    padding:10px;
-    margin:0 40px;
-    box-sizing:border-box;
-  }
   
 .caption {
     padding-top: 10px; /* Space between image and caption */
@@ -150,7 +155,6 @@ h2{
 img {
     display: block; /* Use block for centering */
     margin: 0 auto; /* Center the image */
-    height: 35vh;
 }
 .gif {
     justify-content:center

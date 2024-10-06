@@ -11,9 +11,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color:#F5F5F5;
-            background-image: url("mwebcon/sanrio-emoji.gif");
-            background-size:auto;
+            margin:auto ;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-color: #F5F5F5;
+            background-image: url("mwebcon/sanrio-strawberry.jpg");
+            background-size: cover;
         }
         ::-webkit-scrollbar {
             display: none; /* Hides the scrollbar */
@@ -22,8 +25,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #fff;
-            padding: 20px;
+            background-color: #ffffff8e;
+            padding: 15px;
+            margin: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -33,7 +37,8 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: 250px;
+            width: 250px; /* Default width */
+            transition: border-width 0.3s; /* Optional: smooth transition */
         }
         .show-password {
             cursor: pointer;
@@ -51,14 +56,25 @@
         .submit-button:hover {
             background-color: #45a049;
         }
+
+        /* Media query for smaller screens (like Android devices) */
+        @media (max-width: 480px) { /* You can adjust the width as needed */
+            .password-input {
+                width: 80%; /* Make the input wider */
+                border: 1px solid #bbb; /* Change border color */
+                padding: 8px; /* Adjust padding */
+                font-size: 14px; /* Adjust font size */
+                border-width: 1px; /* Set border width */
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="password-box">
     <h2>Enter Password </h2>
-    <p style="margin-top:1px;">hint: food that contains octopus!  </p>
-    <form id="passwordForm">
+    <p style="margin-top: 1px;">hint: food that contains octopus!</p>
+    <form id="passwordForm" autocomplete="off">
         <input type="password" id="password" class="password-input" placeholder="Enter your password">
         <input type="checkbox" id="showPassword" class="show-password"> Show Password<br>
         <button type="submit" class="submit-button">Enter</button>
@@ -94,6 +110,7 @@
             alert('Incorrect password. Please try again.'); // Show error message
         }
     });
+
 </script>
 
 </body>

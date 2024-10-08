@@ -122,7 +122,7 @@ h2{
     
 
 #quote-polaroid{
-    background-color:rgb(218, 245, 255);
+    background-color:rgba(236, 170, 28, 0.792);
     border-radius: 30px;
     position:relative;
     height:270px;
@@ -207,4 +207,7 @@ img {
 }
 .fade-in.visible {
     opacity: 1;
+}
+audio {
+    display: none; /* This will hide the audio element completely */
 }

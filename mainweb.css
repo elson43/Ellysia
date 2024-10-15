@@ -11,24 +11,29 @@ body {
     display: none; /* Hides the scrollbar */
 }
 
-h1 {
+.welcomecontainer {
     font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 35px; 
+    font-size: 20px; 
     color:#FFD700;
     font-family: "Lora";
     text-align: center; 
     margin-bottom: 15; 
     margin-top: 25px; 
     font-weight: bold;
+    position:relative;
+    z-index:2;
+    margin:auto;
 }
 h2{
     font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 34px; 
+    font-size: 31px; 
     color:#FFD700;
     text-align: center; 
     margin-bottom: 40; 
     margin-top: 20px; 
     font-weight: bold;
+    position:relative;
+    z-index:2;
 }
 .button {
     background-color:rgba(255, 255, 255, 0.373);
@@ -96,6 +101,8 @@ h2{
     align-items:center;
     display:flex;
     margin-top:50px;
+    position:relative;
+    z-index:2;
   }
 .polaroid-caption {
     margin-top: 10px;
@@ -123,7 +130,7 @@ h2{
 
     /* Positioning plush images */
 .left {
-        left: 20px; /* Keep plush on the left side */
+        left: 1px; /* Keep plush on the left side */
         bottom: -2%; /* Position from the bottom */
 }
 
@@ -137,6 +144,7 @@ h2{
     background-color:rgba(255, 255, 255, 0.792);
     border-radius: 30px;
     position:relative;
+    z-index:2;
     height:270px;
     margin: 0px auto;
 }
@@ -159,6 +167,8 @@ h2{
 .box {
     background-color: #a83f39;
     border-radius: 20px;
+    position:relative;
+    z-index: 3;
     width: 82%;
     margin:0 auto;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.345); /* Add box shadow */
@@ -206,7 +216,9 @@ img {
     text-align: center;
     padding: 1px;
     background-color:#a83f39; 
-    margin-top:30px; 
+    margin-top:30px;
+    position:relative;
+    z-index:2;
     
 }
 .hrborder{
@@ -230,8 +242,9 @@ audio {
     color: #FFFFFF;;
     font-size: 24px;
     user-select: none;
-    z-index: 9999;
+    z-index: 1;
     pointer-events: none;
+    opacity: 0.7;
 }
 @keyframes fall {
     to {

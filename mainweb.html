@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div style="margin:auto;"></div>
-        <h1 class="fade-in">Merry Christmas !!</h1>
-    </div>
+    <div class="welcomecontainer">
+        <h1 class="welcome-message">Merry Christmas !!</h1>
+        <img src="mwebcon/pompurinn.gif" alt="Christmas Tree" class="welcome-image">
+    </div><br><br><br>
     <h2>Introduction</h2>
     <div class="box" id="message"> 
         <div class="fade-in">
@@ -132,7 +133,7 @@
 
     <br><br>
     <div>
-        <img src="mwebcon/sweetest.jpg" width="auto" height="350px" alt="The Joy" title="Memories of Her Charm"> 
+        <img src="mwebcon/sweetest.jpg" width="auto" height="350px" alt="The Joy" title="Memories of Her Charm" style="position:relative; z-index:2;"> 
     </div>
     <img src="mwebcon/rate10.gif" alt="Left Plush" class="plush left">
     <br><br>
@@ -172,7 +173,7 @@
             volumeControl.addEventListener('input', function() {
             audio.volume = this.value;
             });
-            const snowflakesCount = 20;  // Number of snowflakes
+            const snowflakesCount = 18;  // Number of snowflakes
             function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');

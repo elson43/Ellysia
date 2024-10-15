@@ -78,6 +78,7 @@ h2{
     color:#000000;
     text-align:left;
     margin:0px auto;
+    margin-left:10px;
     font-weight:bold;
 }
 .polaroid {
@@ -158,7 +159,7 @@ h2{
 .box {
     background-color: #a83f39;
     border-radius: 20px;
-    width: 75%;
+    width: 82%;
     margin:0 auto;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.345); /* Add box shadow */
 }
@@ -226,7 +227,7 @@ audio {
 .snowflake {
     position: fixed;
     top: -10px;
-    color: white;
+    color: #FFFFFF;;
     font-size: 24px;
     user-select: none;
     z-index: 9999;

@@ -172,7 +172,7 @@
             volumeControl.addEventListener('input', function() {
             audio.volume = this.value;
             });
-            const snowflakesCount = 50;  // Number of snowflakes
+            const snowflakesCount = 20;  // Number of snowflakes
             function createSnowflake() {
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
@@ -182,7 +182,7 @@
             // Random positioning and animation properties
             snowflake.style.left = `${Math.random() * window.innerWidth}px`;
             snowflake.style.opacity = `${Math.random() * 0.5 + 0.5}`; // Random opacity
-            snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Random font size
+            snowflake.style.fontSize = `${Math.random() * 7 + 7}px`; // Random font size
 
             // Set the duration of the falling and rotation animation
             const fallDuration = `${Math.random() * 5 + 3}s`; // Random fall duration between 3 to 8 seconds
@@ -203,7 +203,7 @@
 
         // Start the snowfall on page load
         startSnowfall();
-        setInterval(startSnowfall, 10000);  // Keep generating snowflakes every 10 seconds
+        setInterval(startSnowfall, 5000);  // Keep generating snowflakes every 10 seconds
         </script>
 </body>
 </html>

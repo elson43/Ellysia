@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative; /* For absolute positioning of snowflakes */
 }
 ::-webkit-scrollbar {
     display: none; /* Hides the scrollbar */
@@ -80,9 +81,9 @@ h2{
     font-weight:bold;
 }
 .polaroid {
-    padding:auto;
-    height:500;
-    width:60%;
+    padding:80px auto;
+    height:300px;
+    width:70%;
     background-color: white; /* Polaroid background */
     border: 10px solid #ffffff; /* Thin outer border */
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
@@ -95,7 +96,11 @@ h2{
     display:flex;
     margin-top:50px;
   }
-
+.polaroid-caption {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
 #polaroid-img {
     width: 100%; /* Make image fit the container */
     height: 100%; /* Keep image proportions */
@@ -109,20 +114,26 @@ h2{
         position: relative; /* To position the gingerbread man relative to this container */
     }
     
-#tree{
-    position: absolute;
-    right: 200px; /* Part of the gingerbread man will float out of the right border */
-    top: 95%; /* Position it vertically at the middle, adjust as needed */
-    transform: translateY(-50%); /* Center the image vertically */
-    z-index: 10; /* Ensures the gingerbread man stays above the text */
-    width: auto; /* Adjust the size as necessary */
-    height: 75px; /* Maintain aspect ratio */
-    pointer-events: none; /* Ensures the image doesn't interfere with any interactions */
-    }
+.plush {
+        position: fixed; /* Keep plush images fixed in place */
+        width: 100px; /* Adjust size as needed */
+        z-index: 999; /* Make sure it's above the background */
+}
+
+    /* Positioning plush images */
+.left {
+        left: 20px; /* Keep plush on the left side */
+        bottom: -2%; /* Position from the bottom */
+}
+
+.right {
+        right: 20px; /* Keep plush on the right side */
+        bottom: 20px; /* Position from the bottom */
+}
     
 
 #quote-polaroid{
-    background-color:rgba(236, 170, 28, 0.792);
+    background-color:rgba(255, 255, 255, 0.792);
     border-radius: 30px;
     position:relative;
     height:270px;
@@ -193,7 +204,7 @@ img {
     font-size: 11px;
     text-align: center;
     padding: 1px;
-    background-color:rgba(255, 244, 244, 0.766); 
+    background-color:#a83f39; 
     margin-top:30px; 
     
 }
@@ -210,4 +221,29 @@ img {
 }
 audio {
     display: none; /* This will hide the audio element completely */
+}
+/* Snowflake styles */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 24px;
+    user-select: none;
+    z-index: 9999;
+    pointer-events: none;
+}
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg); /* Fall and rotate */
+    }
+}
+
+/* Snowflake rotating animation only */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

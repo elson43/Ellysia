@@ -173,6 +173,15 @@ h2{
     margin:0 auto;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.345); /* Add box shadow */
 }
+.boxvolume{
+    background-color: #a83f39;
+    border-radius: 20px;
+    position:relative;
+    z-index: 3;
+    width: 43%;
+    margin:0 auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.345); /* Add box shadow */
+}
 
 img {
     display: block; /* Use block for centering */
@@ -199,7 +208,7 @@ img {
 
 #title {
     margin: auto;
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-family: 'Lora', serif; /* Elegant serif font */
     font-size: 90; 
     color:#FFD700;
     font-family: "Lora";

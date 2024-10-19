@@ -24,6 +24,7 @@ body {
     z-index:2;
     margin:auto;
 }
+
 h2{
     font-family: 'Playfair Display', serif; /* Elegant serif font */
     font-size: 31px; 
@@ -75,7 +76,6 @@ h2{
     line-height:1.2;
     padding: 10px; /* Combine padding */
     padding-top:1px;
-    border:2px solid rgba(0, 0, 0, 0.286);
 }
 .quote{
     font-size:18px;
@@ -111,12 +111,24 @@ h2{
 }
 #polaroid-img {
     width: 100%; /* Make image fit the container */
-    height: 100%; /* Keep image proportions */
-    padding:1px;
+    height: auto; /* Keep image proportions */
+    padding:0px;
     margin:0 40px;
     box-sizing:border-box;
     object-fit:cover;
+    margin:auto;
   }
+.polaroidpoem{
+    border:white 9px solid;
+    width:70%;
+    height:auto;
+    padding:80px auto;
+    margin: 0 auto;
+    overflow:hidden;
+    position:relative;
+    border-radius:20px;
+    z-index:2;
+}
 
 #tree.container{
         position: relative; /* To position the gingerbread man relative to this container */
@@ -177,8 +189,8 @@ h2{
     background-color: #a83f39;
     border-radius: 20px;
     position:relative;
-    z-index: 3;
-    width: 43%;
+    z-index: 2;
+    width: 60%;
     margin:0 auto;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.345); /* Add box shadow */
 }
@@ -186,6 +198,8 @@ h2{
 img {
     display: block; /* Use block for centering */
     margin: 0 auto; /* Center the image */
+    z-index:2;
+    position:relative;
 }
 .gif {
     justify-content:center
@@ -230,6 +244,60 @@ img {
     z-index:2;
     
 }
+/* Loading Screen */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa; /* Pale coral background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left:0;
+    z-index: 9999; /* Make sure it's on top of everything */
+}
+
+.loader {
+    text-align: center;
+    color: #7d3434;
+    font-family: 'Lora', serif; /* Or any font of your choice */
+    margin:auto;
+}
+.loading-gif {
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin:300px auto 20px auto;
+}
+
+/* Optional spinner animation */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    border-top: 4px solid #ff0000;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+.loading-message {
+    font-size: 18px; /* Adjust font size as needed */
+    margin: 10px 0; /* Space above and below the loading text */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide the content by default */
+.content {
+    display: none;
+}
+.no-scroll {
+    overflow: hidden; /* Prevents scrolling */
+}
+
 .hrborder{
     height:5px; 
     background-color:green;

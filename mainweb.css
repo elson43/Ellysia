@@ -76,6 +76,7 @@ h2{
     line-height:1.2;
     padding: 10px; /* Combine padding */
     padding-top:1px;
+    z-index:2;
 }
 .quote{
     font-size:18px;
@@ -118,21 +119,17 @@ h2{
     object-fit:cover;
     margin:auto;
   }
-.polaroidpoem{
-    border:white 9px solid;
-    width:70%;
-    height:auto;
-    padding:80px auto;
-    margin: 0 auto;
-    overflow:hidden;
-    position:relative;
-    border-radius:20px;
-    z-index:2;
-}
 
-#tree.container{
-        position: relative; /* To position the gingerbread man relative to this container */
-    }
+.img3d{
+    position:relative;
+    z-index:1;
+    border: 8px solid #3b5f3b;
+    border-radius:20px; 
+    background-color: #3b5f3b; 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); 
+    padding:1px
+
+}
     
 .plush {
         position: fixed; /* Keep plush images fixed in place */
@@ -201,6 +198,7 @@ img {
     z-index:2;
     position:relative;
 }
+
 .gif {
     justify-content:center
 }

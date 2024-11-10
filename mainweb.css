@@ -25,7 +25,7 @@ body {
 }
 #welcomemessage{
     font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 50px; 
+    font-size: 54px; 
     color:#ffffff;
     text-shadow: 2px 2px 8px #ff0d0d;
     font-family: "Great Vibes", cursive;
@@ -49,17 +49,19 @@ h2{
     z-index:2;
 }
 .button {
-    background-color:rgba(255, 255, 255, 0.373);
-    color: black;
+    background-color:rgba(255, 255, 255, 0.499);
+    color:#ff0000;
+    text-align: center; 
+    text-shadow: 2px 2px 10px  #ff413772;;
     font-size: 25px;
     font-family: 'Playfair Display', serif;
-    width: 80px;
-    height: 50px;
-    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
     
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 #message {
@@ -338,5 +340,49 @@ audio {
     }
     to {
         transform: rotate(360deg);
+    }
+}
+.loading-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 100px; /* Adjust the size to fit the GIF */
+    height: 100px; /* Adjust the size to fit the GIF */
+    z-index: 9999; /* Ensure it's always on top */
+}
+
+/* Adjusting the GIF itself */
+.loading-animation img {
+    width: 100px; /* Adjust the size of your GIF */
+    height: auto; /* Maintain the aspect ratio */
+}
+/* Initial style for messages container */
+#messagesContainer {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade-in for the entire container */
+}
+
+#messagesContainer.visible {
+    opacity: 1; /* Make the container visible when the class is added */
+}
+
+/* Style for individual messages */
+.message {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+    animation: slideIn 1s ease-in-out forwards;
+    margin-bottom: 10px; /* Space between messages */
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End in original position */
     }
 }

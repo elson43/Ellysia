@@ -15,10 +15,21 @@ body {
     font-family: 'Playfair Display', serif; /* Elegant serif font */
     font-size: 20px; 
     color:#FFD700;
-    font-family: "Lora";
     text-align: center; 
     margin-bottom: 15; 
     margin-top: 25px; 
+    font-weight: bold;
+    position:relative;
+    z-index:2;
+    margin:auto;
+}
+#welcomemessage{
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 60px; 
+    color:#ffffff;
+    text-shadow: 2px 2px 8px #ff0d0d;
+    font-family: "Great Vibes", cursive;
+    text-align: center; 
     font-weight: bold;
     position:relative;
     z-index:2;
@@ -30,6 +41,7 @@ h2{
     font-size: 31px; 
     color:#FFD700;
     text-align: center; 
+    text-shadow: 2px 2px 13px  #FFB800;
     margin-bottom: 40; 
     margin-top: 20px; 
     font-weight: bold;
@@ -48,18 +60,6 @@ h2{
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    animation: colorPop 1.5s infinite; /* Animation effect */
-}
-
-@keyframes colorPop {
-    0% { background-color: #c63349; } 
-    25% { background-color: #fd008f; }
-    50% { background-color: #0077e7; }
-    75% { background-color: #a27709; }
-    100% { background-color: #cc0096; }
 }
 
 #message {
@@ -230,7 +230,7 @@ img {
     font-weight: bold;
 }
 #watermark{
-    font-family:'Lato', sans-serif;
+    font-family:'', sans-serif;
     font-size:small;  
     color: #4A4A4A; 
     font-size: 11px;
@@ -239,8 +239,12 @@ img {
     background-color:#a83f39; 
     margin-top:30px;
     position:relative;
-    z-index:2;
+    z-index:1;
     
+}
+.elemental{
+    font-size:25px;
+    text-shadow: 2px 2px 13px  #FFB800;
 }
 /* Loading Screen */
 #loading-screen {

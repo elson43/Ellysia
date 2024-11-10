@@ -173,14 +173,17 @@
             observer.observe(el);
         });
     
-        // Background music handling
+       // Background music handling
         const audio1 = document.getElementById('background-music1');
         const audio2 = document.getElementById('background-music2');
         const audio3 = document.getElementById('background-music3');
-    
-    
+
+        // Delay the first song by 3 seconds after the page loads
+        setTimeout(() => {
+            audio1.play();
+        }, 5000); // 3000 milliseconds = 3 seconds
+
         // Play the first song and then the second song when the first ends
-        audio1.play();
         audio1.addEventListener('ended', () => {
             audio2.play();
             audio2.addEventListener('ended', () => {

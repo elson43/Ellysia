@@ -1,0 +1,137 @@
+/* General Styling */
+body {
+    background-color: #F1E0C5;  /* Warm Beige */
+    font-family: 'Lora', serif;  /* Elegant and nostalgic font */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover; /* Ensures the pattern covers the entire background */
+    background-repeat: repeat; /* Repeats the pattern across the screen */
+    background-attachment: fixed; /* Fixes the background for desktop scrolling */
+    background-position: center; /* Centers the pattern */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensures the background covers the full height */
+    overflow-x: hidden;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: 25px 18px; /* Slightly smaller tiles for mobile view */
+    }
+}
+
+button.chapter-btn{
+    font-size:12px;
+}
+
+/* Intro Text Styling */
+.intro-text {
+    color: #4A5C4B;  /* Dark Olive Green */
+    font-size: 14px;
+    font-family: 'Lora', serif;
+}
+.divider {
+    border: 0;
+    border-top: 2px solid #9B4D49; /* Muted Maroon */
+    width: 60%;
+    margin: 20px auto;
+}
+.personal-photo{
+    width:20%;
+    height:auto;
+}
+.border{
+    border:solid white;
+    border-radius:20px;
+}
+img {
+    border: 5px solid #A8B9A6;  /* Dusty sage green */
+    border-radius: 15px;  /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* Soft shadow effect */
+}
+
+/* Title (h1) */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 250%;
+    color: #9B4D49;  /* Muted Maroon */
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), 0 0 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1);  /* Soft and layered shadow */
+}
+
+/* Main Container */
+.main-container {
+    max-width: 75%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent background */
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.intro {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    max-width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+    font-size: 15px;
+    color: #4A5C4B;  /* Pale Lavender */
+    font-style: italic;
+}
+
+/* Button Section */
+.buttonss {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Chapter Button Styling */
+.chapter-btn {
+    font-family:'QuickSand';
+    color: #4A5C4B;  /* Dark Olive Green */
+    background-color: #A8B9A6;  /* Dusty Sage Green */
+    border-radius: 20px;
+    padding: 20px 20%;
+    width:90%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+footer {
+    font-size: 16px;
+    color: #9B4D49;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Chapter Button Hover Effect */
+.chapter-btn:hover {
+    background-color: #F2E080;  /* Vintage Yellow */
+    transform: scale(1.05);  /* Slightly enlarge button on hover */
+}
+
+/* Media Query for Responsive Layout */
+@media (max-width: 600px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .chapter-btn {
+        font-size: 18px;
+        padding: 10px 30%;
+    }
+}

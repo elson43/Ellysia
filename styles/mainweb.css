@@ -17,6 +17,9 @@ body {
 html {
     scroll-behavior: smooth;
 }
+#message{
+    font-size:11px
+}
 .photo-section{
     width:95%;
     height:auto;
@@ -40,10 +43,7 @@ button.chapter-btn{
     width: 60%;
     margin: 20px auto;
 }
-.personal-photo{
-    width:40%;
-    height:auto;
-}
+
 .border{
     border:solid white;
     border-radius:20px;
@@ -57,13 +57,24 @@ img {
 /* Title (h1) */
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 250%;
+    font-size: 200%;
+    color: #3c2f15;  /* Muted Maroon */
+    margin: auto;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    padding:10px 10px 7px;
+}
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 200%;
     color: #3c2f15;  /* Muted Maroon */
     margin: auto;
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     padding:20px;
+    margin-top:40px
 }
 
 /* Main Container */
@@ -90,7 +101,7 @@ h1 {
 .intro {
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     max-width: 80%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -108,7 +119,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 /* Chapter Button Styling */

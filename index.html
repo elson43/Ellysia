@@ -40,6 +40,9 @@
             width: 250px; /* Default width */
             transition: border-width 0.3s; /* Optional: smooth transition */
         }
+        .password-input.error {
+            border: 1px solid red; /* Red border when password is incorrect */
+        }
         .show-password {
             cursor: pointer;
             margin-bottom: 10px;
@@ -73,7 +76,7 @@
 
 <div class="password-box">
     <h2>Enter Password </h2>
-    <p style="margin-top: 1px;">Hint: Below The Box</p>
+    <p style="margin-top: 1px;">Restricted Area !</p>
     <form id="passwordForm" autocomplete="off">
         <input type="password" id="password" class="password-input" placeholder="Enter your password"><br>
         <input type="checkbox" id="showPassword" class="show-password">Show Password<br>
@@ -85,39 +88,31 @@
     const passwordField = document.getElementById('password');
     const showPasswordCheckbox = document.getElementById('showPassword');
     const passwordForm = document.getElementById('passwordForm');
-    
-    // Define your password here
-    const correctPassword = ''; // Replace with your actual password
 
-    // Check if the user has already entered the password before
-    if (localStorage.getItem('passwordEntered') === 'true') {
-        // Redirect to main page if password has been entered before
-        window.location.href = 'mainweb.html'; // Replace with your actual main page URL
-    }
+    // Define your password here
+    const correctPassword = 'sushi4ever'; // Replace with your actual password
 
     // Toggle password visibility
-    showPasswordCheckbox.addEventListener('change', function() {
-        if (this.checked) {
-            passwordField.type = 'text';  // Show password
-        } else { 
-            passwordField.type = 'password';  // Hide password
-        }
+    showPasswordCheckbox.addEventListener('change', function () {
+        passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
     });
 
     // Handle form submission
-    passwordForm.addEventListener('submit', function(event) {
+    passwordForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
         const enteredPassword = passwordField.value;
 
         // Check if the entered password is correct
         if (enteredPassword === correctPassword) {
-            // Store a flag in localStorage to indicate that the password was entered
-            localStorage.setItem('passwordEntered', 'true');
-            
+            // Set sessionStorage flag to indicate password was correct
+            sessionStorage.setItem('accessGranted', 'true'); // Store the flag in sessionStorage
+
             // Redirect to the main page
             window.location.href = 'mainweb.html'; // Replace with your actual main page URL
         } else {
             alert('Incorrect password. Please try again.'); // Show error message
+            passwordField.classList.add('error'); // Add error styling to the input
+            passwordField.value = ''; // Clear the input field
         }
     });
 </script>

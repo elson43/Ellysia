@@ -3,21 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flipbook</title>
     <link rel="stylesheet" href="../styles/chapter.css">
+    <script src="../javascript/chapter.js" defer></script>
+    <script src="password-gate.js" defer></script>
+    <script src="https://kit.fontawesome.com/5391f9bc6f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Our Little Escape</h1>
-    <div class="scrapbook">
-        <div class="scrapbook-item">
-            <img src="../mwebcon/time.jpg" alt="Memory 1">
-            <p class="note">"A quiet moment by the window."</p>
+    <!-- Previous Button -->
+    <button id="prev-btn">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+
+    <!-- Book -->
+    <div id="book" class="book">
+        <!-- Paper 1 -->
+        <div id="p1" class="paper">
+            <div class="front">
+                <div id="f1" class="front-content">
+                    <p>Hey There</p>
+                </div>
+                <div id="img1" class="image" style="opacity: 0;">
+                    <img src="../mwebcon/image1.jpg" alt="Image for Page 1" />
+                </div>
+            </div>
+            <div class="back">
+                <div id="b1" class="back-content">
+                    <h1>Back 1</h1>
+                </div>
+            </div>
         </div>
-        <div class="scrapbook-item">
-            <img src="../mwebcon/moon.jpg" alt="Memory 2">
-            <p class="note">"Laughing over something silly."</p>
+        <!-- Paper 2 -->
+        <div id="p2" class="paper">
+            <div class="front">
+                <div id="f2" class="front-content">
+                    <img src="../mwebcon/gerbera.jpg" alt="Front 2" class="page-image">
+                </div>
+                <div id="img2" class="image" style="opacity: 0;">
+                    <img src="../mwebcon/image2.jpg" alt="Image for Page 2" />
+                </div>
+            </div>
+            <div class="back">
+                <div id="b2" class="back-content">
+                    <h1>Back 2</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Paper 3 -->
+        <div id="p3" class="paper">
+            <div class="front">
+                <div id="f3" class="front-content">
+                    <img src="../mwebcon/image3.jpg" alt="Front 3" class="page-image">
+                </div>
+                <div id="img3" class="image" style="opacity: 0;">
+                    <img src="../mwebcon/image3.jpg" alt="Image for Page 3" />
+                </div>
+            </div>
+            <div class="back">
+                <div id="b3" class="back-content">
+                    <h1>Back 3</h1>
+                </div>
+            </div>
         </div>
     </div>
-    
+
+    <!-- Next Button -->
+    <button id="next-btn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </button>
 </body>
 </html>

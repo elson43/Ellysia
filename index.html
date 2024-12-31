@@ -75,11 +75,13 @@
 <body>
 
 <div class="password-box">
-    <h2>Enter Password </h2>
-    <p style="margin-top: 1px;">Restricted Area !</p>
+    <h2>Enter Password</h2>
+    <p style="margin-top: 1px;">Restricted Area!</p>
     <form id="passwordForm" autocomplete="off">
         <input type="password" id="password" class="password-input" placeholder="Enter your password"><br>
-        <input type="checkbox" id="showPassword" class="show-password">Show Password<br>
+        <label>
+            <input type="checkbox" id="showPassword" class="show-password"> Show Password
+        </label><br>
         <button type="submit" class="submit-button">Enter</button>
     </form>
 </div>
@@ -105,7 +107,7 @@
         // Check if the entered password is correct
         if (enteredPassword === correctPassword) {
             // Set sessionStorage flag to indicate password was correct
-            sessionStorage.setItem('accessGranted', 'true'); // Store the flag in sessionStorage
+            sessionStorage.setItem('passwordEntered', 'true');
 
             // Redirect to the main page
             window.location.href = 'mainweb.html'; // Replace with your actual main page URL

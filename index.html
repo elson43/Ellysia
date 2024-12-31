@@ -106,8 +106,7 @@
 
         // Check if the entered password is correct
         if (enteredPassword === correctPassword) {
-            // Set sessionStorage flag to indicate password was correct
-            sessionStorage.setItem('passwordEntered', 'true');
+            localStorage.setItem('accessGranted', 'true');
 
             // Redirect to the main page
             window.location.href = 'mainweb.html'; // Replace with your actual main page URL

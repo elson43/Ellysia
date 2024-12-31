@@ -73,50 +73,53 @@
     </style>
 </head>
 <body>
-
-<div class="password-box">
-    <h2>Enter Password</h2>
-    <p style="margin-top: 1px;">Restricted Area!</p>
-    <form id="passwordForm" autocomplete="off">
-        <input type="password" id="password" class="password-input" placeholder="Enter your password"><br>
-        <label>
-            <input type="checkbox" id="showPassword" class="show-password"> Show Password
-        </label><br>
-        <button type="submit" class="submit-button">Enter</button>
-    </form>
-</div>
-
-<script>
-    const passwordField = document.getElementById('password');
-    const showPasswordCheckbox = document.getElementById('showPassword');
-    const passwordForm = document.getElementById('passwordForm');
-
-    // Define your password here
-    const correctPassword = 'sushi4ever'; // Replace with your actual password
-
-    // Toggle password visibility
-    showPasswordCheckbox.addEventListener('change', function () {
-        passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
-    });
-
-    // Handle form submission
-    passwordForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
-        const enteredPassword = passwordField.value;
-
-        // Check if the entered password is correct
-        if (enteredPassword === correctPassword) {
-            localStorage.setItem('accessGranted', 'true');
-
-            // Redirect to the main page
-            window.location.href = 'mainweb.html'; // Replace with your actual main page URL
-        } else {
-            alert('Incorrect password. Please try again.'); // Show error message
-            passwordField.classList.add('error'); // Add error styling to the input
-            passwordField.value = ''; // Clear the input field
-        }
-    });
-</script>
-
-</body>
-</html>
+    <div class="password-box">
+        <h2>Enter Password</h2>
+        <p style="margin-top: 1px;">Restricted Area!</p>
+        <form id="passwordForm" autocomplete="off">
+            <input type="password" id="password" class="password-input" placeholder="Enter your password"><br>
+            <label>
+                <input type="checkbox" id="showPassword" class="show-password"> Show Password
+            </label><br>
+            <button type="submit" class="submit-button">Enter</button>
+        </form>
+    </div>
+    
+    <script>
+        const passwordField = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordForm = document.getElementById('passwordForm');
+    
+        const correctPassword = 'sushi4ever'; // Replace with your actual password
+    
+        showPasswordCheckbox.addEventListener('change', function () {
+            passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
+        });
+    
+        passwordForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+            const enteredPassword = passwordField.value;
+    
+            if (enteredPassword === correctPassword) {
+                // Store the access time to manage the timer
+                localStorage.setItem('accessGranted', 'true');
+                localStorage.setItem('accessTime', Date.now()); // Store the timestamp of access time
+    
+                // Set the access expiry time (e.g., 5 minutes = 300000 ms)
+                const accessExpiryTime = 300000; // 5 minutes
+                setTimeout(() => {
+                    localStorage.removeItem('accessGranted');
+                    localStorage.removeItem('accessTime');
+                }, accessExpiryTime); 
+    
+                window.location.href = 'mainweb.html'; // Redirect to main page
+            } else {
+                alert('Incorrect password. Please try again.');
+                passwordField.classList.add('error');
+                passwordField.value = '';
+            }
+        });
+    </script>
+    
+    </body>
+    </html>

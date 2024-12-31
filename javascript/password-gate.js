@@ -7,7 +7,7 @@ const currentTime = new Date().getTime();
 if (!storedTime || currentTime - storedTime > PASSWORD_TIMEOUT) {
     alert('Session expired. Please re-enter the password.');
     localStorage.clear(); // Clear the localStorage
-    window.location.href = '../index.html'; // Redirect to the password page
+    window.location.href = 'index.html'; // Redirect to the password page
 } else {
     // Update the timestamp to extend the session
     localStorage.setItem('timestamp', currentTime);

@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    display: none;
     position: relative; /* For absolute positioning of snowflakes */
 }
 ::-webkit-scrollbar {

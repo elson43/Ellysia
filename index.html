@@ -93,17 +93,17 @@
         const correctPassword = 'sushi4ever'; // Replace with your actual password
     
         showPasswordCheckbox.addEventListener('change', function () {
-            passwordField.type = this.checked ? 'text' : 'password';
+            passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
         });
     
         passwordForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default form submission
             const enteredPassword = passwordField.value;
     
             if (enteredPassword === correctPassword) {
-                // Store session information
+                // Store session info
                 localStorage.setItem('accessGranted', 'true');
-                localStorage.setItem('accessTime', Date.now().toString());
+                localStorage.setItem('accessTime', Date.now().toString()); // Store timestamp of access time
     
                 // Redirect to main page
                 window.location.href = 'mainweb.html';

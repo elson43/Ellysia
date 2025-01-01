@@ -15,7 +15,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: #F5F5F5;
-            background-image: url("mwebcon/sanrio-strawberry.jpg");
+            background-image: url("mwebcon/aesthetics.jpg");
             background-size: cover;
         }
         ::-webkit-scrollbar {
@@ -101,11 +101,11 @@
             const enteredPassword = passwordField.value;
     
             if (enteredPassword === correctPassword) {
-                // Store session info
+                // Store session info in localStorage
                 localStorage.setItem('accessGranted', 'true');
-                localStorage.setItem('accessTime', Date.now().toString()); // Store timestamp of access time
-    
-                // Redirect to main page
+                localStorage.setItem('accessTime', Date.now().toString()); // Store the current timestamp
+
+                // Redirect to the main page
                 window.location.href = 'mainweb.html';
             } else {
                 alert('Incorrect password. Please try again.');

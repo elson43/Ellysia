@@ -1,13 +1,10 @@
-// Check session validity on mainweb.html load
-const accessExpiryTime = 60000; // 60 minutes
-const accessTimestamp = localStorage.getItem('accessTimestamp');
-const currentTime = Date.now();
+const accessExpiryTime = 60000; // 1 minute for testing
+        const accessGranted = localStorage.getItem('accessGranted');
+        const accessTime = localStorage.getItem('accessTime');
 
-if (!accessTimestamp || currentTime - accessTimestamp > accessExpiryTime) {
-    alert('Your session has expired. Please enter the password again.');
-    localStorage.removeItem('accessGranted'); // Clear access flag
-    localStorage.removeItem('accessTimestamp'); // Clear timestamp
-    window.location.href = 'index.html'; // Redirect to password page
-} else {
-    console.log('Access still valid.');
-}
+        if (!accessGranted || !accessTime || (Date.now() - parseInt(accessTime)) > accessExpiryTime) {
+            // If no valid session, redirect back to password page
+            localStorage.removeItem('accessGranted');
+            localStorage.removeItem('accessTime');
+            window.location.href = 'index.html';
+        }

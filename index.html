@@ -84,7 +84,7 @@
             <button type="submit" class="submit-button">Enter</button>
         </form>
     </div>
-    
+
     <script>
         const passwordField = document.getElementById('password');
         const showPasswordCheckbox = document.getElementById('showPassword');
@@ -93,26 +93,20 @@
         const correctPassword = 'sushi4ever'; // Replace with your actual password
     
         showPasswordCheckbox.addEventListener('change', function () {
-            passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
+            passwordField.type = this.checked ? 'text' : 'password';
         });
     
         passwordForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
             const enteredPassword = passwordField.value;
     
             if (enteredPassword === correctPassword) {
-                // Store the access time to manage the timer
+                // Store session information
                 localStorage.setItem('accessGranted', 'true');
-                localStorage.setItem('accessTime', Date.now()); // Store the timestamp of access time
+                localStorage.setItem('accessTime', Date.now().toString());
     
-                // Set the access expiry time (e.g., 5 minutes = 300000 ms)
-                const accessExpiryTime = 300000; // 5 minutes
-                setTimeout(() => {
-                    localStorage.removeItem('accessGranted');
-                    localStorage.removeItem('accessTime');
-                }, accessExpiryTime); 
-    
-                window.location.href = 'mainweb.html'; // Redirect to main page
+                // Redirect to main page
+                window.location.href = 'mainweb.html';
             } else {
                 alert('Incorrect password. Please try again.');
                 passwordField.classList.add('error');
@@ -121,5 +115,5 @@
         });
     </script>
     
-    </body>
-    </html>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>Our Story</title>
     <link rel="stylesheet" href="styles/mainweb.css">
     <script src="javascript/password-gate.js" defer></script>
+    <script src="javascript/mainweb.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Shadows+Into+Light&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
     <!-- Personal Picture -->
     <div class="main-container">
         <div class="photo-section">
-            <img src="mwebcon/us.jpg" alt="A moment together" class="personal-photo">
+            <img src="mwebcon/us.jpg" alt="A moment together" class="mainimg">
         </div>
 
     <!-- Title Section -->
@@ -43,6 +44,25 @@
                 <p style="font-family:'Dancing Script';font-size:15px;">Until we meet again.</p>
             </div>
     </div>
+  <div class="memory-box">
+  <!-- Tabs for Categories -->
+
+  <!-- Memory Grid (for photos only) -->
+  <div class="memory-grid">
+    <div class="memory-card" data-category="photos">
+      <img id="memoryImage" src="mwebcon/moon.jpg" alt="Memory Photo">
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="tabs">
+    <p class="title">I/LO/VE/Y/OU</p>
+  </div>
+  <div class="pagination">
+    <button id="next">Next</button>
+  </div>
+</div>
+
 
     <!-- Footer -->
     <footer>

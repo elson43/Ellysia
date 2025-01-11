@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Input</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +16,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: #F5F5F5;
-            background-image: url("mwebcon/aesthetics.jpg");
+            background-image: url("../mwebcon/aesthetics.jpg");
             background-size: cover;
         }
         ::-webkit-scrollbar {
@@ -76,8 +77,8 @@
     <div class="password-box">
         <h2>Enter Password</h2>
         <p style="margin-top: 1px;">Restricted Area!</p>
-        <form id="passwordForm" autocomplete="off">
-            <input type="password" id="password" class="password-input" placeholder="Enter your password"><br>
+        <form id="passwordForm" method="POST" action="/validate-password" autocomplete="off">
+            <input type="password" id="password" name="password" class="password-input" placeholder="Enter your password"><br>
             <label>
                 <input type="checkbox" id="showPassword" class="show-password"> Show Password
             </label><br>
@@ -93,7 +94,5 @@
             passwordField.type = this.checked ? 'text' : 'password';
         });
     </script>
-    
-    
 </body>
 </html>

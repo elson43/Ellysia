@@ -1,37 +1,36 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-
 const app = express();
-const PORT = 3000;
+const port = 3000;
 
-// Replace with your actual password
-const PASSWORD = 'supernova';
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Serve the HTML file
+// Serve the index.html file when accessing the root URL ("/")
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'main', 'index.html'));
 });
 
-// Validate password
+// Serve static files (like mainweb.html, images, etc.) from the 'main' directory
+app.use(express.static(path.join(__dirname, 'main')));
+
+// Parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Endpoint to handle password validation
 app.post('/validate-password', (req, res) => {
     const enteredPassword = req.body.password;
-    
-    if (enteredPassword === PASSWORD) {
-        // Redirect to the main page
+
+    const correctPassword = 'supernova'; // Replace this with your actual password
+
+    if (enteredPassword === correctPassword) {
+        // Redirect to the main page upon successful password entry
         res.redirect('/mainweb.html');
     } else {
-        res.send('<script>alert("Incorrect password!"); window.history.back();</script>');
+        // If password is incorrect, reload the page with an error message
+        res.send('Incorrect password. Please try again.');
     }
 });
 
-// Serve the protected page
-app.get('/mainweb.html', (req, res) => {
-    res.send('<h1>Welcome to the Main Web!</h1>');
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });

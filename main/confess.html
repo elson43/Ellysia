@@ -16,7 +16,7 @@
         <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader">
-            <img src="mwebcon/kazuha.gif" alt="Loading" class="loading-gif"> <!-- Loading GIF -->
+            <img src="../mwebcon/kazuha.gif" alt="Loading" class="loading-gif"> <!-- Loading GIF -->
             <div class="spinner"></div> <!-- Spinner -->
             <div class="loading-message">Fantastic things are loading...                                     </div> <!-- Loading Text -->
         </div>
@@ -26,7 +26,7 @@
         <p class="elemental">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
         <h1 id="welcomemessage">Merry Christmas !!</h1>
         <p class="elemental">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</p>
-        <img src="mwebcon/pompurinn.gif" alt="Christmas ponpurin" class="welcome-image">
+        <img src="../mwebcon/pompurinn.gif" alt="Christmas ponpurin" class="welcome-image">
     </div><br><br>
     <div class="" id="message">
         <p id="heart">Click the heart</p>
@@ -49,7 +49,7 @@
             </p>
         </div>
     </div><br><br><br><br>
-    <img src="mwebcon/code.jpg" alt="codes" class="img3d" width="70%" height="auto">
+    <img src="../mwebcon/code.jpg" alt="codes" class="img3d" width="70%" height="auto">
     <br><br><br>
     <h2>A Note Just For You</h2>
     <div class="box" id="message">
@@ -72,7 +72,7 @@
             
         </div>
     </div><br><br><br><br><br>
-    <img src="mwebcon/snacks.jpg"  width="70%" height="auto" alt="Nyam nyam" title="Snacks" style="position:relative; z-index:1; border: 8px solid #3b5f3b; border-radius:20px; background-color: #3b5f3b; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); padding:2px" ><br><br><br><br>
+    <img src="../mwebcon/snacks.jpg"  width="70%" height="auto" alt="Nyam nyam" title="Snacks" style="position:relative; z-index:1; border: 8px solid #3b5f3b; border-radius:20px; background-color: #3b5f3b; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); padding:2px" ><br><br><br><br>
     
     <h2>Dumb Thoughts</h2>
     <div class="box" id="message">
@@ -87,7 +87,7 @@
         </div>
     </div><br><br><br><br><br>
 
-    <img src="mwebcon/flowers.jpg" alt="paperflowers" height="350" width="auato" ><br><br><br><br>
+    <img src="../mwebcon/flowers.jpg" alt="paperflowers" height="350" width="auato" ><br><br><br><br>
     <h2>Thoughtful Discoveries</h2>
     <div class="box" id="message">
         <div class="fade-in">
@@ -106,7 +106,7 @@
     <br><br><br><br>
 
     <video autoplay muted loop class="img3d" style="width: 70%; height: auto; display: block; margin: 0 auto; object-fit: cover;" alt="Fireworks" title="Fireworks">
-        <source src="mwebcon/fireworks.mp4" type="video/mp4">
+        <source src="../mwebcon/fireworks.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
       
@@ -132,20 +132,20 @@
 
     <br><br><br><br>
     
-    <img src="mwebcon/gifts.jpg" class="img3d" width="70%" height="auto" alt="The Joy" title="Gifts"> 
-    <img src="mwebcon/rate10.gif" alt="Left Plush" class="plush left">
+    <img src="../mwebcon/gifts.jpg" class="img3d" width="70%" height="auto" alt="The Joy" title="Gifts"> 
+    <img src="../mwebcon/rate10.gif" alt="Left Plush" class="plush left">
     <br><br><br>
 
     <audio id="background-music1" preload="auto">
-        <source src="songs/nothing.mp3" type="audio/mpeg">
+        <source src="../songs/nothing.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <audio id="background-music2" preload="auto">
-        <source src="songs/oldlove.mp3" type="audio/mpeg">
+        <source src="../songs/oldlove.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <audio id="background-music3" preload="auto">
-        <source src="songs/seasons.mp3" type="audio/mpeg">
+        <source src="../songs/seasons.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     
@@ -185,9 +185,21 @@
         
         // Array of messages to display
         const messages = [
+            "My Dearest,",
             "I promised myself I’d give this to you,",
-            "so here it is.",
-            "I hope you like it.",
+            "and here it is, not just in this moment but for all the moments to come.",
+            "This message will stay, like the love I carry for you,",
+            "whether near or far, now or forever.",
+
+            "I hope you find comfort in these words,",
+            "knowing that no matter the time or distance, my feelings for you never fade.",
+            "What we have is something beyond time—",
+            "a love that will always be here, waiting for you,",
+            "no matter where life takes us.",
+
+            "I love you.",
+            "Now and always.",
+            "-Elson",
         ];
     
         let messageIndex = 0;
@@ -230,7 +242,7 @@
     
         // Snowfall effect
         const snowflakesCount = 19;  // Number of snowflakes
-        const snowflakeImage = 'mwebcon/snowflake1.png'; // Path to the snowflake image
+        const snowflakeImage = '../mwebcon/snowflake1.png'; // Path to the snowflake image
     
         function createSnowflake() {
             const snowflake = document.createElement('img');

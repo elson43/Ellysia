@@ -6,7 +6,7 @@ const port = 3000;
 
 // Serve the index.html file when accessing the root URL ("/")
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'main', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Serve static files (like mainweb.html, images, etc.) from the 'main' directory
@@ -23,7 +23,7 @@ app.post('/validate-password', (req, res) => {
 
     if (enteredPassword === correctPassword) {
         // Redirect to the main page upon successful password entry
-        res.redirect('/mainweb.html');
+        res.redirect('/main/mainweb.html');
     } else {
         // If password is incorrect, reload the page with an error message
         res.send('Incorrect password. Please try again.');

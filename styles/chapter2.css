@@ -10,14 +10,17 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     padding: 50px;
+    text-align: center;
 }
 
 .timeline {
     position: relative;
     max-width: 800px;
     margin: auto;
+    display: none; /* Initially hidden */
 }
 
+/* Memory Entry */
 .timeline-entry {
     display: flex;
     justify-content: space-between;
@@ -51,6 +54,7 @@ body {
     color: #5A5A5A;
 }
 
+/* Alternate background for odd entries */
 .timeline-entry:nth-child(odd) {
     background-color: #f9f9f9;
 }
@@ -72,6 +76,30 @@ body {
     position: relative;
     z-index: 1;
 }
+
+/* Play Button */
+.play-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 1s, opacity 1s;
+}
+
+.play-button:hover {
+    background-color: #45a049;
+}
+
+/* New animation for the button to scale and fade out */
+.play-button.fade-out {
+    opacity: 0;
+    transform: scale(0);
+}
+
 
 /* Responsive design for small screens */
 @media (max-width: 768px) {

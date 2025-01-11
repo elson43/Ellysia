@@ -86,34 +86,14 @@
     </div>
 
     <script>
-        const passwordField = document.getElementById('password');
         const showPasswordCheckbox = document.getElementById('showPassword');
-        const passwordForm = document.getElementById('passwordForm');
-    
-        const correctPassword = 'supernova'; // Replace with your actual password
+        const passwordField = document.getElementById('password');
     
         showPasswordCheckbox.addEventListener('change', function () {
-            passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
-        });
-    
-        passwordForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-            const enteredPassword = passwordField.value;
-    
-            if (enteredPassword === correctPassword) {
-                // Store session info in localStorage
-                localStorage.setItem('accessGranted', 'true');
-                localStorage.setItem('accessTime', Date.now().toString()); // Store the current timestamp
-
-                // Redirect to the main page
-                window.location.href = 'mainweb.html';
-            } else {
-                alert('Incorrect password. Please try again.');
-                passwordField.classList.add('error');
-                passwordField.value = '';
-            }
+            passwordField.type = this.checked ? 'text' : 'password';
         });
     </script>
+    
     
 </body>
 </html>

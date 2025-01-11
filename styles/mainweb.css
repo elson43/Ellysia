@@ -207,11 +207,11 @@ h2 {
     display: flex; /* Flexbox for centering image inside */
     justify-content: center;
     align-items: center;
-    width: 360px; /* Set the fixed width for each card */
-    height: 270px; /* Set the fixed height for each card */
+    width: 100%; /* Set the fixed width for each card */
+    height: 80%; /* Set the fixed height for each card */
     margin: 10px; /* Optional: Adds space between cards */
     overflow: hidden; /* Ensures the image is cropped if it overflows */
-    border-radius: 15px; /* Optional: Adds rounded corners to the card */
+    border-radius: 10px; /* Optional: Adds rounded corners to the card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around each card */
     transition: transform 0.3s ease;
     cursor: pointer;

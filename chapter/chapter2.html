@@ -8,7 +8,11 @@
     <script src="../javascript/chapter2.js" defer></script>
 </head>
 <body>
-    <div class="timeline">
+    <!-- Play Button -->
+    <button class="play-button" id="playButton">Play Song & Reveal Memories</button>
+
+    <!-- Timeline -->
+    <div class="timeline" id="timelineContent">
         <!-- Memory Entry 1 -->
         <div class="timeline-entry">
             <div class="timeline-date">Jan 1, 2022</div>
@@ -28,7 +32,16 @@
         </div>
 
         <!-- Add more memories here -->
+        <div class="timeline-entry">
+            <div class="timeline-date">Feb 10, 2022</div>
+            <div class="timeline-content">
+                <img src="../mwebcon/gerbera.jpg" alt="Memory 2">
+                <p class="memory-description">I went on an amazing trip to the mountains!</p>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Audio Element -->
+    <audio id="audio" src="../mwebcon/song.mp3"></audio>
 </body>
 </html>

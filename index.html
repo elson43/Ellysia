@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Input</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -89,18 +90,32 @@
         const passwordField = document.getElementById('password');
         const showPasswordCheckbox = document.getElementById('showPassword');
         const passwordForm = document.getElementById('passwordForm');
-    
-        const correctPassword = 'supernova'; // Replace with your actual password
-    
+        
+        // Correct MD5 hash of the password "supernova"
+        const correctPasswordHash = 'de05930dd46a984ca32aad9feac718e8';
+
+        // Function to hash the entered password
+       // Function to hash the entered password
+        function hashPassword(password) {
+            const trimmedPassword = password.trim().toLowerCase(); // Remove spaces and convert to lowercase
+            return CryptoJS.MD5(trimmedPassword).toString(); // Generate MD5 hash
+        }
+
+
+        // Show password functionality
         showPasswordCheckbox.addEventListener('change', function () {
             passwordField.type = this.checked ? 'text' : 'password'; // Toggle between text and password
         });
-    
+
+        // Form submission logic
         passwordForm.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
             const enteredPassword = passwordField.value;
-    
-            if (enteredPassword === correctPassword) {
+
+            const hashedEnteredPassword = hashPassword(enteredPassword);
+
+            // Compare the hashed entered password with the correct password hash
+            if (hashedEnteredPassword === correctPasswordHash) {
                 // Store session info in localStorage
                 localStorage.setItem('accessGranted', 'true');
                 localStorage.setItem('accessTime', Date.now().toString()); // Store the current timestamp

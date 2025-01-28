@@ -1,9 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    margin:auto;
     font-family: sans-serif;
     background-color: powderblue;
 }
@@ -23,6 +29,7 @@ body {
     top: 0;
     left: 0;
     perspective: 1500px;
+
 }
 
 .front,
@@ -34,7 +41,7 @@ body {
     top: 0;
     left: 0;
     transform-origin: left;
-    transition: transform 3s;
+    transition: transform 0.5s;
 }
 
 .front {
@@ -54,32 +61,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevents content from overflowing */
-    position: relative;
 }
 
-/* Add image styling */
-.page-image {
-    width: 90%;
-    height: 90%;
-    object-fit: cover; /* Ensures image fits the page without distortion */
-    border-radius: 5px;
-    will-change: transform, opacity; /* Optimizes rendering */
-}
-.image {
-    transition: opacity 0.5s ease; /* Smooth fade-in */
-    position: absolute; /* Adjust the position as needed */
-    top: 0; /* Align properly */
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-
-/* Back content rotation */
 .back-content {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg)
 }
 
 /* Paper flip effect */
@@ -112,13 +97,17 @@ i {
 
 /* Paper stack order */
 #p1 {
-    z-index: 3;
+    z-index: 4;
 }
 
 #p2 {
-    z-index: 2;
+    z-index: 3;
 }
 
 #p3 {
+    z-index: 2;
+}
+
+#p4 {
     z-index: 1;
 }

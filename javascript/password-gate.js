@@ -1,6 +1,6 @@
 const accessGranted = localStorage.getItem('accessGranted');
 const accessTime = localStorage.getItem('accessTime');
-const accessExpiryTime = 3900000; // 60 minutes (in milliseconds)
+const accessExpiryTime = 390000; // 60 minutes (in milliseconds)
 
 if (!accessGranted || !accessTime) {
     window.location.href = '/index.html'; // Adjust the path if necessary (if 'index.html' is not in the root directory)

@@ -1,0 +1,79 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.timeline {
+  max-width: 80%;
+  margin: 50px auto;
+  position: relative;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #6c63ff;
+  z-index: -1; /* Ensures the line is behind the markers */
+}
+
+.timeline-item {
+  position: relative;
+  margin: 40px 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #6c63ff;
+  border-radius: 50%;
+  border: 3px solid white;
+  z-index: 1; /* Ensures the marker is above the line */
+}
+
+.timeline-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 80%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+  text-align: left;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: auto;
+  text-align: right;
+}
+
+.timeline-content h3 {
+  margin: 0 0 10px;
+  color: #6c63ff;
+}
+
+.timeline-content p {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.timeline-content img,
+.timeline-content video {
+  max-width: 90%;
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block; /* Ensures proper spacing */
+}

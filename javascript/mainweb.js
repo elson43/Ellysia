@@ -4,17 +4,16 @@ const nextButton = document.getElementById('next');
 
 // Array of all the image sources
 const photos = [
-  "../mwebcon/batik.jpg",
-  "../mwebcon/kristen2.jpg",
-  "../mwebcon/bracelet.jpg",
-  "../mwebcon/lovelake.jpg",
-  "../mwebcon/lovelakee.jpg",
-  "../mwebcon/canteen.jpg",
-  "../mwebcon/firstmeet.jpg",
-  "../mwebcon/giftss.jpg",
-  "../mwebcon/rizzdog.jpg",
-  "../mwebcon/kristen.jpg",
-  "../mwebcon/saves.jpg"
+  "mwebcon/batik.jpg",
+  "mwebcon/kristen2.jpg",
+  "mwebcon/bracelet.jpg",
+  "mwebcon/lovelakee.jpg",
+  "mwebcon/canteen.jpg",
+  "mwebcon/firstmeet.jpg",
+  "mwebcon/giftss.jpg",
+  "mwebcon/rizzdog.jpg",
+  "mwebcon/kristen.jpg",
+  "mwebcon/saves.jpg"
 ];
 
 // Define the starting index

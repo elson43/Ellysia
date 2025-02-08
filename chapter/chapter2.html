@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/chapter2.css">
-    <script src="../javascript/chapter2.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+  <link rel="stylesheet" href="../styles/chapter2.css">
+  <script src="../javascript/chapter2.js" defer></script>
 </head>
 <body>
-    <!-- Play Button -->
-    <button class="play-button" id="playButton">Play Song & Reveal Memories</button>
+  <!-- Music Player -->
+  <audio id="background-music" loop>
+    <source src="../songs/oldlove.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Music Control -->
+  <div class="music-control">
+    <button id="toggle-music">🔈</button>
+  </div>
 
-    <!-- Timeline -->
-    <div class="timeline" id="timelineContent">
-        <!-- Memory Entry 1 -->
-        <div class="timeline-entry">
-            <div class="timeline-date">Jan 1, 2022</div>
-            <div class="timeline-content">
-                <img src="../mwebcon/us.jpg" alt="Memory 1">
-                <p class="memory-description">This was a great day spent with friends.</p>
-            </div>
-        </div>
-        
-        <!-- Memory Entry 2 -->
-        <div class="timeline-entry">
-            <div class="timeline-date">Feb 10, 2022</div>
-            <div class="timeline-content">
-                <img src="../mwebcon/gerbera.jpg" alt="Memory 2">
-                <p class="memory-description">I went on an amazing trip to the mountains!</p>
-            </div>
-        </div>
+  <!-- Introduction Section -->
+  <div class="intro">
+    <h1>Welcome to Our Journey</h1>
+    <p>
+      Here is a timeline of all our most cherished memories together.  
+      Click below to relive these moments and reflect on the beautiful journey we’ve shared so far.
+    </p>
+    <button class="start-timeline-btn" id="start-timeline-btn">Start the Timeline</button>
+  </div>
 
-        <!-- Add more memories here -->
-        <div class="timeline-entry">
-            <div class="timeline-date">Feb 10, 2022</div>
-            <div class="timeline-content">
-                <img src="../mwebcon/gerbera.jpg" alt="Memory 2">
-                <p class="memory-description">I went on an amazing trip to the mountains!</p>
-            </div>
-        </div>
+  <!-- Timeline Section -->
+  <div id="timeline" class="timeline hidden">
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>Her Birthday</h3>
+        <p>Celebrating her special day with laughter and love.</p>
+        <img src="../mwebcon/moon.jpg" alt="Her Birthday">
+      </div>
     </div>
 
-    <!-- Audio Element -->
-    <audio id="audio" src="../mwebcon/song.mp3"></audio>
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>New Year</h3>
+        <p>Ringing in the new year together with fireworks and joy.</p>
+        <img src="../mwebcon/us.jpg" alt="New Year">
+      </div>
+    </div>
+  
+    <!-- Another New Timeline Item -->
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        <h3>First Hug</h3>
+        <p>A moment that I'll cherish forever.</p>
+        <video class="lazy" data-src="../mwebcon/fireworks.mp4" controls autoplay loop muted></video>
+      </div>
+    </div>
+  
+    <!-- Additional timeline items go here -->
+  </div>
+  
+
 </body>
 </html>

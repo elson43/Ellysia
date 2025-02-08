@@ -2,52 +2,86 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.intro {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center; /* Center text */
+}
+
+.intro h1,
+.intro p {
+  margin: 0 0 20px;
+}
+
+.start-timeline-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-timeline-btn:hover {
+  background-color: #45a049;
 }
 
 .timeline {
   max-width: 80%;
   margin: 50px auto;
   position: relative;
+  opacity: 1; /* Hidden by default */
 }
 
+.timeline.visible {
+  opacity: 1; /* Make visible */
+  transform: translateY(0); /* Bring to position */
+}
+
+/* Remove the timeline line */
 .timeline:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 100%;
-  background-color: #6c63ff;
-  z-index: -1; /* Ensures the line is behind the markers */
+  content: none; /* Remove the line */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
 }
 
 .timeline-item {
   position: relative;
   margin: 40px 0;
-}
-
-.timeline-marker {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
-  background-color: #6c63ff;
-  border-radius: 50%;
-  border: 3px solid white;
-  z-index: 1; /* Ensures the marker is above the line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .timeline-content {
-  background: white;
+  background: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 9px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   width: 80%;
+  text-align: center; /* Center the content in the Polaroid */
+  transform: rotate(0deg); /* No initial rotation */
+  transition: transform 1.5s ease-out; /* Smooth transition for rotation */
+  border: 10px solid #fff; /* Make it look like a Polaroid border */
+  padding-bottom: 40px; /* Extra space for the 'caption' */
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -62,7 +96,7 @@ body {
 
 .timeline-content h3 {
   margin: 0 0 10px;
-  color: #6c63ff;
+  color: #0e03e4;
 }
 
 .timeline-content p {
@@ -77,3 +111,21 @@ body {
   margin-top: 10px;
   display: block; /* Ensures proper spacing */
 }
+
+/* Hide the circle markers */
+.timeline-marker {
+  display: none; /* Hide the circle marker */
+}
+
+.timeline-item {
+  opacity: 1; /* Make the item fully visible by default */
+  transform: rotate(0deg); /* No initial rotation */
+  transition: transform 1.5s ease-out; /* Smooth rotation transition */
+}
+
+.timeline.visible {
+  opacity: 1;
+  transform: rotate(0);
+  transition: opacity 2s ease-out, transform 2s ease-out; /* Smooth transition for both opacity and transform */
+}
+

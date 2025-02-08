@@ -6,9 +6,31 @@
   <title>Timeline</title>
   <link rel="stylesheet" href="../styles/styletest.css">
   <script src="../javascript/chaptertest.js" defer></script>
-  </head>
+</head>
 <body>
-  <div class="timeline">
+  <!-- Music Player -->
+  <audio id="background-music" loop>
+    <source src="../songs/oldlove.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <!-- Music Control -->
+  <div class="music-control">
+    <button id="toggle-music">🔈</button>
+  </div>
+
+  <!-- Introduction Section -->
+  <div class="intro">
+    <h1>Welcome to Our Journey</h1>
+    <p>
+      Here is a timeline of all our most cherished memories together.  
+      Click below to relive these moments and reflect on the beautiful journey we’ve shared so far.
+    </p>
+    <button class="start-timeline-btn" id="start-timeline-btn">Start the Timeline</button>
+  </div>
+
+  <!-- Timeline Section -->
+  <div id="timeline" class="timeline hidden">
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
@@ -23,72 +45,58 @@
       <div class="timeline-content">
         <h3>New Year</h3>
         <p>Ringing in the new year together with fireworks and joy.</p>
-        <video controls muted autoplay loop playsinline loading="lazy">
-          <source src="../mwebcon/fireworks.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <img src="../mwebcon/us.jpg" alt="New Year">
       </div>
     </div>
-
+  
+    <!-- Another New Timeline Item -->
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
         <h3>First Hug</h3>
         <p>A moment that I'll cherish forever.</p>
-        <video controls>
-          <source src="../mwebcon/firsthug.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <video class="lazy" data-src="../mwebcon/fireworks.mp4" controls autoplay loop muted></video>
       </div>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>Our Favorite Spot</h3>
-        <p>Where we spent peaceful evenings.</p>
-        <img src="../mwebcon/flowers.jpg" alt="Favorite Spot">
+        <h3>New Year</h3>
+        <p>Ringing in the new year together with fireworks and joy.</p>
+        <img src="../mwebcon/us.jpg" alt="New Year">
       </div>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>Our Favorite Spot</h3>
-        <p>Where we spent peaceful evenings.</p>
-        <video controls>
-          <source src="../mwebcon/.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <h3>New Year</h3>
+        <p>Ringing in the new year together with fireworks and joy.</p>
+        <img src="../mwebcon/us.jpg" alt="New Year">
       </div>
     </div>
 
     <div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>Our Favorite Spot</h3>
-        <p>Where we spent peaceful evenings.</p>
-        <img src="../mwebcon/us.jpg" alt="Favorite Spot">
+        <h3>New Year</h3>
+        <p>Ringing in the new year together with fireworks and joy.</p>
+        <img src="../mwebcon/us.jpg" alt="New Year">
       </div>
-    </div>
-
-    <div class="timeline-item">
+      
+    </div><div class="timeline-item">
       <div class="timeline-marker"></div>
       <div class="timeline-content">
-        <h3>Our Favorite Spot</h3>
-        <p>Where we spent peaceful evenings.</p>
-        <img src="../mwebcon/drawing.jpg" alt="Favorite Spot">
+        <h3>New Year</h3>
+        <p>Ringing in the new year together with fireworks and joy.</p>
+        <img src="../mwebcon/us.jpg" alt="New Year">
       </div>
     </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <h3>Our Favorite Spot</h3>
-        <p>Where we spent peaceful evenings.</p>
-        <img src="../mwebcon/gifts.jpg" alt="Favorite Spot">
-      </div>
-    </div>
+  
+    <!-- Additional timeline items go here -->
   </div>
+  
+
 </body>
 </html>

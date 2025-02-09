@@ -5,6 +5,7 @@ body {
   background: linear-gradient(135deg, #FFF7E3, #FEEBD6);
   background-size: cover;
   scroll-behavior: smooth; /* Enable smooth scroll */
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -35,7 +36,12 @@ video {
 video.show-controls {
   pointer-events: all; /* Enable interaction when the class is added */
 }
-
+h3{
+  font-family: 'Permanent Marker'
+}
+p{
+  font-family: 'Courier New'
+}
 /* Intro Section */
 .intro {
   font-family: 'Courier New', Courier, monospace;
@@ -105,7 +111,7 @@ video.show-controls {
   transform: rotate(0deg); /* No initial rotation */
   transition: transform 1.5s ease-out; /* Smooth transition for rotation */
   border: 8px solid #D4C8A7; /* Light tan border for vintage look */
-  padding-bottom: 50px; /* Extra space for the 'caption' */
+  padding-bottom: 40px; /* Extra space for the 'caption' */
 }
 
 .caption {

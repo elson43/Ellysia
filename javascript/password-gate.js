@@ -24,4 +24,4 @@ if (!accessGranted || !accessTime) {
             window.location.href = '/index.html'; // Adjust the path if necessary
         }, accessExpiryTime - timeElapsed); // Time left to expiry
     }
-}
+}ii

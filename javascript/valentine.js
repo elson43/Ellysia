@@ -121,11 +121,11 @@ yesButton.addEventListener('click', () => {
     // Optionally, show a new image
     const newImage = document.createElement('img'); // Create a new img element
     newImage.src = '../mwebcon/rose.jpg'; // Set the new image source
-    newImage.style.width = '40%'
+    newImage.style.width = '45%'
     newImage.style.height = 'auto'
     newImage.alt = 'New Image'; // Add an alt description for the image
     newImage.style.position = 'absolute'; // Position it as needed
-    newImage.style.top = '70%'; // Adjust position on the screen
+    newImage.style.top = '80%'; // Adjust position on the screen
     newImage.style.left = '50%'; // Center horizontally
     newImage.style.transform = 'translateX(-50%)'; // Center it properly
     document.body.appendChild(newImage); // Add it to the page

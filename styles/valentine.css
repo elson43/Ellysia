@@ -29,7 +29,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
     text-align: center;
     margin: 50px;
-    z-index:10;
+    z-index:1;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     position: relative; /* Allow for movement */
     transition: transform 0.3s; /* Smooth transition for moving the question */

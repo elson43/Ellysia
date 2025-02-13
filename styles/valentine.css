@@ -1,0 +1,67 @@
+/* Wall container to center everything */
+#wall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    height: 100vh; /* Full viewport height */
+    padding-top: 50px; /* Add space above the content */
+    text-align: center; /* Centers text like question and buttons */
+    position: relative; /* Keep track of the absolute positioning of elements */
+}
+::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
+}
+
+/* Make the gif responsive and centered */
+.gif {
+    max-width: 30%; /* Ensure it doesn't overflow */
+    max-height: 60%; /* Ensure it fits well */
+    transition: transform 0.3s; /* Smooth transition for moving the gif */
+}
+
+/* Question styling */
+#question {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Shadows Into Light', cursive;
+    color: #ff1493;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    text-align: center;
+    margin: 50px;
+    z-index:10;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative; /* Allow for movement */
+    transition: transform 0.3s; /* Smooth transition for moving the question */
+}
+
+/* Button container styling */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    gap: 20px; /* Adds space between the buttons */
+    z-index: 5; /* Ensure buttons are beneath the gif and question */
+}
+
+/* Button styling */
+.valentine-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #ff6666;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, left 0.5s, top 0.5s;
+    z-index: 5; /* Ensure buttons are beneath the gif and text */
+}
+
+.valentine-button:hover {
+    transform: scale(1.1);
+}
+
+footer{
+    font-size:10px;
+    text-align:center;
+}

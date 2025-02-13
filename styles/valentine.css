@@ -15,7 +15,7 @@
 
 /* Make the gif responsive and centered */
 .gif {
-    max-width: 30%; /* Ensure it doesn't overflow */
+    max-width: 45%; /* Ensure it doesn't overflow */
     max-height: 60%; /* Ensure it fits well */
     transition: transform 0.3s; /* Smooth transition for moving the gif */
 }
@@ -64,4 +64,5 @@
 footer{
     font-size:10px;
     text-align:center;
+    margin-bottom: 50px;
 }

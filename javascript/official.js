@@ -1,0 +1,23 @@
+const messageLines = [
+    "Before you, life was just happening.",
+    "Days went by, and I didn’t think much about where they were going.",
+    "It wasn’t bad—it just felt... empty in a way I didn’t even notice until you showed up.",
+    "Then you came along.",
+    "You didn’t think you were enough, but I did. From the start.",
+    "You didn’t need to be loud or trying to stand out.",
+    "You were just... you.",
+    "And somehow, that was more than enough",
+    "You didn't try to impress me. You didn't need to.",
+    "Just being around you felt like something i didn't want to miss..",
+    "And little by little, I saw you open up.",
+    "You laughed more.",
+    "You got excited about small things.",
+    "You talked about tomorrow, not with fear, but with hope.",
+    "And when you started picturing the future… I was in it.",
+    "That meant everything to me.",
+    "We made so many memories without even trying.",
+    "I didn’t fall for some perfect version of you.",
+    "I fell for who you already are.",
+    "And now that I’m here—now that we’re here—",
+    "I guess there’s just one more thing I want to say."
+  ];

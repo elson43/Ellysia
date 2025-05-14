@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just One More Thing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background: #fef6f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 1.5s ease forwards;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .show {
+      display: flex;
+    }
+
+    .fade-text {
+      opacity: 0;
+      animation: fadeInText 2s forwards;
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .fade-in-out {
+      animation: fadeInOut 4s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 2s;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #ffccd5;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    img {
+      max-width: 300px;
+      height: auto;
+      margin: 30px 0;
+      opacity: 0;
+      transition: opacity 2s ease;
+      border: 12px solid #ffccd5;
+      border-radius: 12px;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    img.show {
+      opacity: 1;
+      animation: fadeInImg 1.5s ease-out forwards;
+    }
+
+    @keyframes fadeInImg {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .final {
+      font-size: 50px;
+      font-weight: bold;
+      animation: heartbeat 2s infinite;
+      opacity: 0;
+      font-family: 'Amatic SC', serif;
+      transition: opacity 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .skip-button {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 12px 24px;
+      background-color: #ffccd5;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 4s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Animated button styles */
+    .animated-button {
+      padding: 12px 24px;
+      background-color: #ffccd5;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .animated-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.4s ease, height 0.4s ease;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.1);
+      background-color: #ffccd5;
+      color: #ff6b6b;
+      border-color: #ffccd5;
+    }
+
+    .animated-button:hover::before {
+      width: 0;
+      height: 0;
+    }
+
+    .animated-button:focus {
+      outline: none;
+    }
+
+    .animated-button:active {
+      transform: scale(0.95);
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 10px;
+      }
+      .button{
+        font-size: 14px;
+        padding: 5px 10px;
+      }
+    }
+    .skip-button{
+      font-size: 13px;
+      padding:5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="heartsContainer"></div>
+
+  <!-- Background Music -->
+  <audio id="backgroundMusic" loop>
+    <source src="../songs/piano.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="page show" id="introPage">
+    <p class="fade-text" style="margin-bottom:20px;">Click the Heart</p>
+    <button class="animated-button" onclick="goToPage('messagePage')">♡</button>
+    <button class="skip-button" onclick="skipToFinal()">Skip</button>
+  </div>
+
+  <div class="page" id="messagePage">
+    <div id="messageContainer"></div>
+    <p class="quote" id="quote">We started as strangers lost in our own ways. And now, I can’t imagine a path without you walking beside me.</p>
+    
+    <!-- Add the animated button here -->
+    <button class="animated-button" id="toFinal" style="display:none" onclick="goToPage('finalPage')">♡</button>
+  </div>
+
+  <div class="page" id="finalPage">
+    <img id="finalImage" src="../mwebcon/cuties.jpg" alt="Special Moment" />
+    <p class="final" id="finalText">Can I be your boyfriend?</p>
+  </div>
+
+  <script>
+    const messageLines = [
+      "Hey, I know this is a bit unexpected, but",
+      "I just wanted to show you something.",
+      "I made this for you, just to remind you how much you mean to me.",
+      "You deserve way more than just a discount",
+      "so here’s something i want to say.",
+      "Before you, life was just happening.",
+      "Days went by, and I didn’t think much about where they were going.",
+      "It wasn’t bad—it just felt... empty in a way I didn’t even notice until you showed up.",
+      "Then you came along.",
+      "You didn’t think you were enough, but I did. From the start.",
+      "You didn’t need to be loud or trying to stand out.",
+      "You were just... you.",
+      "And somehow, that was more than enough",
+      "You didn't try to impress me. You didn't need to.",
+      "Just being around you felt like something i didn't want to miss..",
+      "And little by little, I saw you changed.",
+      "You laughed more.",
+      "You got excited about small things.",
+      "You talked about tomorrow, not with fear, but with hope.",
+      "And when you started picturing the future… I was in it.",
+      "That meant everything to me.",
+      "We made so many memories without even trying.",
+      "I didn’t fall for some perfect version of you.",
+      "I fell for who you already are.",
+      "And now that I’m here—now that we’re here—",
+      "I guess there’s just one more thing I want to say."
+    ];
+
+    let isMessagePlaying = true;
+
+    function goToPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('show'));
+      const target = document.getElementById(id);
+      target.classList.add('show');
+
+      if (id === 'messagePage') startMessage();
+      if (id === 'finalPage') showFinal();
+    }
+
+    async function startMessage() {
+      const container = document.getElementById('messageContainer');
+      for (let i = 0; i < messageLines.length; i++) {
+        if (!isMessagePlaying) return;
+        const line = document.createElement('p');
+        line.className = 'fade-text fade-in-out';
+        line.textContent = messageLines[i];
+        container.appendChild(line);
+        await new Promise(res => setTimeout(res, 4000));
+        container.removeChild(line);
+      }
+      document.getElementById('quote').style.opacity = 1;
+      document.getElementById('toFinal').style.display = 'inline-block';
+    }
+
+    function skipToFinal() {
+      isMessagePlaying = false;
+      goToPage('finalPage');
+    }
+
+    function showFinal() {
+      const img = document.getElementById('finalImage');
+      const text = document.getElementById('finalText');
+
+      setTimeout(() => {
+        img.classList.add('show');
+      }, 300);
+
+      setTimeout(() => {
+        text.style.opacity = 1;
+        createHearts();
+      }, 2500);
+    }
+
+    function createHearts() {
+      const container = document.getElementById('heartsContainer');
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = 100 + Math.random() * 100 + 'vh';
+        heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+        container.appendChild(heart);
+        setTimeout(() => container.removeChild(heart), 50000);
+      }
+    }
+
+    // Start background music automatically
+    window.onload = function() {
+      const audio = document.getElementById('backgroundMusic');
+      audio.play();
+    };
+  </script>
+</body>
+</html>

@@ -17,7 +17,7 @@
 .gif {
     max-width: 45%; /* Ensure it doesn't overflow */
     max-height: 60%; /* Ensure it fits well */
-    transition: transform 0.3s; /* Smooth transition for moving the gif */
+    transition: transform 0.3s; /* Smooth trassssssssssssnsition for moving the gif */
 }
 
 /* Question styling */
@@ -31,8 +31,8 @@
     margin: 50px;
     z-index:1;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    position: relative; /* Allow for movement */
-    transition: transform 0.3s; /* Smooth transition for moving the question */
+    position: relative; /* Allossssssssssssw for movement */
+    transition: transform 0.3s; /* Smoothssssssssssssssssss transition for moving the question */
 }
 
 /* Button container styling */

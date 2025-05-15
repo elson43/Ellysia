@@ -43,6 +43,9 @@
     .fade-text {
       opacity: 0;
       animation: fadeInText 2s forwards;
+      font-family: 'Amatic SC', serif;
+      font-size: 30px;
+      font-weight: bold;
     }
 
     @keyframes fadeInText {
@@ -63,7 +66,7 @@
 
     .quote {
       font-style: italic;
-      margin-top: 20px;
+      margin-top: 35px;
       opacity: 0;
       transition: opacity 2s;
     }
@@ -83,7 +86,8 @@
     img {
       max-width: 300px;
       height: auto;
-      margin: 30px 0;
+      margin: 20px 0;
+      margin-top: 5%;
       opacity: 0;
       transition: opacity 2s ease;
       border: 12px solid #ffccd5;
@@ -105,7 +109,7 @@
     }
 
     .final {
-      font-size: 50px;
+      font-size: 46px;
       font-weight: bold;
       animation: heartbeat 2s infinite;
       opacity: 0;
@@ -193,6 +197,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
+      margin-top:20px;
       font-weight: bold;
       color: #333;
       position: relative;
@@ -254,7 +259,7 @@
 
   <!-- Background Music -->
   <audio id="backgroundMusic" loop>
-    <source src="../songs/piano.mp3" type="audio/mp3">
+    <source src="../songs/untilifoundyou.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
 
@@ -280,31 +285,34 @@
   <script>
     const messageLines = [
       "Hey, I know this is a bit unexpected, but",
-      "I just wanted to show you something.",
+      "I just wanted to tell you something.",
       "I made this for you, just to remind you how much you mean to me.",
       "You deserve way more than just a discount",
       "so here’s something i want to say.",
       "Before you, life was just happening.",
       "Days went by, and I didn’t think much about where they were going.",
-      "It wasn’t bad—it just felt... empty in a way I didn’t even notice until you showed up.",
+      "it just felt... empty in a way I didn’t even notice.",
+      "Until you showed up.",
       "Then you came along.",
-      "You didn’t think you were enough, but I did. From the start.",
+      "You didn’t think you were enough, but I did.",
       "You didn’t need to be loud or trying to stand out.",
       "You were just... you.",
       "And somehow, that was more than enough",
       "You didn't try to impress me. You didn't need to.",
-      "Just being around you felt like something i didn't want to miss..",
-      "And little by little, I saw you changed.",
+      "Just being around you felt like something..",
+      "i didn't want to miss..",
+      "And as time passed by, I saw you changed.",
       "You laughed more.",
       "You got excited about small things.",
-      "You talked about tomorrow, not with fear, but with hope.",
-      "And when you started picturing the future… I was in it.",
+      "You talked about tomorrow...",
+      "And when you started imagining the future…",
+      "I was in it...",
       "That meant everything to me.",
       "We made so many memories without even trying.",
       "I didn’t fall for some perfect version of you.",
       "I fell for who you already are.",
-      "And now that I’m here—now that we’re here—",
-      "I guess there’s just one more thing I want to say."
+      "And now that we're here together.",
+      "there’s just one more thing I want to say."
     ];
 
     let isMessagePlaying = true;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Just One More Thing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -71,7 +71,7 @@
       transition: opacity 2s;
     }
 
-    .button {
+    .button, .animated-button {
       margin-top: 30px;
       padding: 12px 24px;
       background-color: #ffccd5;
@@ -90,12 +90,9 @@
       margin-top: 5%;
       opacity: 0;
       transition: opacity 2s ease;
-      border: 12px solid #ffccd5;
+      border: 8px solid #f6e27f; /* lighter, glowing gold */
+      box-shadow: 0 0 20px 5px rgba(246, 226, 127, 0.6); /* soft golden glow */
       border-radius: 12px;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
     }
 
     img.show {
@@ -169,10 +166,12 @@
       background: pink;
       border-radius: 50%;
     }
+
     .heart::before {
       top: -10px;
       left: 0;
     }
+
     .heart::after {
       left: -10px;
       top: 0;
@@ -189,17 +188,7 @@
       }
     }
 
-    /* Animated button styles */
     .animated-button {
-      padding: 12px 24px;
-      background-color: #ffccd5;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top:20px;
-      font-weight: bold;
-      color: #333;
       position: relative;
       overflow: hidden;
       transition: all 0.4s ease-in-out;
@@ -221,7 +210,6 @@
 
     .animated-button:hover {
       transform: scale(1.1);
-      background-color: #ffccd5;
       color: #ff6b6b;
       border-color: #ffccd5;
     }
@@ -243,21 +231,20 @@
       .page {
         padding: 10px;
       }
-      .button{
+      .button {
         font-size: 14px;
         padding: 5px 10px;
       }
     }
-    .skip-button{
+    .skip-button {
       font-size: 13px;
-      padding:5px 10px;
+      padding: 5px 10px;
     }
   </style>
 </head>
 <body>
   <div class="hearts" id="heartsContainer"></div>
 
-  <!-- Background Music -->
   <audio id="backgroundMusic" loop>
     <source src="../songs/untilifoundyou.mp3" type="audio/mp3">
     Your browser does not support the audio element.
@@ -265,20 +252,18 @@
 
   <div class="page show" id="introPage">
     <p class="fade-text" style="margin-bottom:20px;">Click the Heart</p>
-    <button class="animated-button" onclick="goToPage('messagePage')">♡</button>
+    <button class="animated-button" onclick="playMusicAndGoToPage('messagePage')">♡</button>
     <button class="skip-button" onclick="skipToFinal()">Skip</button>
   </div>
 
   <div class="page" id="messagePage">
     <div id="messageContainer"></div>
     <p class="quote" id="quote">We started as strangers lost in our own ways. And now, I can’t imagine a path without you walking beside me.</p>
-    
-    <!-- Add the animated button here -->
     <button class="animated-button" id="toFinal" style="display:none" onclick="goToPage('finalPage')">♡</button>
   </div>
 
   <div class="page" id="finalPage">
-    <img id="finalImage" src="../mwebcon/cuties.jpg" alt="Special Moment" />
+    <img id="finalImage" src="../mwebcon/wheretheworldcollides.jpg" alt="Special Moment" />
     <p class="final" id="finalText">Can I be your boyfriend?</p>
   </div>
 
@@ -322,11 +307,16 @@
 
     function goToPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('show'));
-      const target = document.getElementById(id);
-      target.classList.add('show');
+      document.getElementById(id).classList.add('show');
 
       if (id === 'messagePage') startMessage();
       if (id === 'finalPage') showFinal();
+    }
+
+    function playMusicAndGoToPage(pageId) {
+      const audio = document.getElementById('backgroundMusic');
+      audio.play().catch(e => console.log('Playback blocked:', e));
+      goToPage(pageId);
     }
 
     async function startMessage() {
@@ -375,12 +365,6 @@
         setTimeout(() => container.removeChild(heart), 50000);
       }
     }
-
-    // Start background music automatically
-    window.onload = function() {
-      const audio = document.getElementById('backgroundMusic');
-      audio.play();
-    };
   </script>
 </body>
 </html>
